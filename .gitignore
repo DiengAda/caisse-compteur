@@ -1,0 +1,21 @@
+# Environnement virtuel
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Base de données locale (ne pas versionner les données)
+caisse.db
+*.db
+
+# Éditeurs / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Variables d'environnement (si ajoutées plus tard)
+.env
