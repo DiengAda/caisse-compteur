@@ -1,13 +1,14 @@
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 <body>
     <h1>Détail des espèces</h1>
 
 <div>
     <h2>Billets</h2>
     {% for billet in billets %}
-    <div>
+    <div class="ligne" data-valeur="{{ billet }}">
         <span>{{ billet }} €</span> x
-        <input type="number" min="0">
-        = <span>0,00 €</span>
+        <input type="number" min="0" class="quantite">
+        = <span class="sous-total">0,00 €</span>
     </div>
     {% endfor %}
 </div>
