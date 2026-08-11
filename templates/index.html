@@ -11,5 +11,14 @@
         = <span class="sous-total">0,00 €</span>
     </div>
     {% endfor %}
+    
+    <h2>Pièces</h2>
+    {% for piece in pieces %}
+    <div class="ligne" data-valeur="{{ piece }}">
+        <span>{{ piece }} €</span> x
+        <input type="number" min="0" class="quantite">
+        = <span class="sous-total">0,00 €</span>
+    </div>
+    {% endfor %}
 </div>
 </body>
