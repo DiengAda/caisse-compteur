@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Comptage de caisse</title>
-</head>
 <body>
     <h1>Détail des espèces</h1>
+
+<div>
+    <h2>Billets</h2>
+    {% for billet in billets %}
+    <div>
+        <span>{{ billet }} €</span> x
+        <input type="number" min="0">
+        = <span>0,00 €</span>
+    </div>
+    {% endfor %}
+</div>
 </body>
-</html>
