@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const lignes = document.querySelectorAll(".ligne");
     const totalEl = document.getElementById("total");
+    const btnEnregistrer = document.getElementById("btn-enregistrer");
 
     function calculerTout() {
         let total = 0;
@@ -24,4 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const input = ligne.querySelector(".quantite");
         input.addEventListener("input", calculerTout);
     });
+
+    btnEnregistrer.addEventListener("click", () => {
+    // On récupère le total actuellement affiché
+    const totalActuel = parseFloat(totalEl.textContent);
+
+    fetch("/api/comptage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ total: totalActuel })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log("Réponse du serveur :", data);
+    });
+});
+
 });
